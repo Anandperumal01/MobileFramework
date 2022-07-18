@@ -1,5 +1,6 @@
 package com.at.driver;
 
+import com.at.utils.PropertyUtils;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +16,7 @@ public class Driver {
     // class should be closed for modification and open for extension
 
     // factory pattern ---> generating child classes  for super class or an interface
-
+    public static WebDriver driver;
 
 
     private Driver(){
@@ -23,9 +24,9 @@ public class Driver {
     }
 
     public static void initDriver() throws MalformedURLException {
+      String modevalue= PropertyUtils.getValue("mode");
 
-
-        WebDriver driver=Driverfactory.get(Modes.LOCAL);
+       driver=Driverfactory.get(Modes.valueOf(modevalue));
 
 
     }
@@ -33,6 +34,8 @@ public class Driver {
     public static void quitDriver(){
 
         // logic to quit
+        driver.quit();
+
 
     }
 

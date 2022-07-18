@@ -1,5 +1,6 @@
 package com.at.testcases;
 
+import com.at.driver.Driver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.By;
@@ -19,9 +20,28 @@ public class TapTests extends BaseTest{
       5.keep right things at right places
      */
 
-    AndroidDriver driver;
+   // AndroidDriver driver;
+
+   @Test
+    public void tapTest(){
+       WebElement views= Driver.driver.findElement(By.xpath("//android.widget.TextView[@text='Views']"));
+
+       views.click();
+
+
+    }
 
     @Test
+    public void swipeTest(){
+        WebElement views=Driver.driver.findElement(By.xpath("//android.widget.TextView[@text='Views']"));
+
+        views.click();
+
+    }
+
+    /*
+
+   // @Test
     public void tapTest(){
 
 
@@ -42,7 +62,7 @@ public class TapTests extends BaseTest{
 
     }
 
-    @Test
+   // @Test
     public void swipeTest(){
 
 
@@ -62,4 +82,7 @@ public class TapTests extends BaseTest{
         views.click();
 
     }
+
+
+     */
 }
