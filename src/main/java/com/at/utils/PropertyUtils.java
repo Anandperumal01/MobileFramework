@@ -20,7 +20,8 @@ public class PropertyUtils {
 
         //FileInputStream fileInputStream= null;
         //implementing Autocloseable
-        try ( FileInputStream fileInputStream = new FileInputStream("")){
+        // try with resource
+        try ( FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir")+"/src/test/resources/config/config.properties")){
 
             properties.load(fileInputStream);
 

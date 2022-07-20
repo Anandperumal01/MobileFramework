@@ -1,6 +1,7 @@
 package com.at.testcases;
 
 import com.at.driver.Driver;
+import com.at.driver.DriverManager;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.By;
@@ -24,7 +25,7 @@ public class TapTests extends BaseTest{
 
    @Test
     public void tapTest(){
-       WebElement views= Driver.driver.findElement(By.xpath("//android.widget.TextView[@text='Views']"));
+       WebElement views= .findElement(By.xpath("//android.widget.TextView[@text='Views']"));
 
        views.click();
 
@@ -33,7 +34,7 @@ public class TapTests extends BaseTest{
 
     @Test
     public void swipeTest(){
-        WebElement views=Driver.driver.findElement(By.xpath("//android.widget.TextView[@text='Views']"));
+        WebElement views=Driver.getDriver().findElement(By.xpath("//android.widget.TextView[@text='Views']"));
 
         views.click();
 

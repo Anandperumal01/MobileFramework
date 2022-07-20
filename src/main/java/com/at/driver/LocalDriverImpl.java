@@ -18,6 +18,7 @@ public class LocalDriverImpl implements iDriver{
         DesiredCapabilities capabilites = new DesiredCapabilities();
         capabilites.setCapability(MobileCapabilityType.APP,
                 System.getProperty("user.dir") + "/src/test/resources/apkfiles/ApiDemos-debug.apk");
+        capabilites.setCapability(MobileCapabilityType.PLATFORM_NAME,"Android");
         capabilites.setCapability(MobileCapabilityType.AUTOMATION_NAME, "uiautomator2");
         capabilites.setCapability(MobileCapabilityType.DEVICE_NAME, "RZ8M740EBJT");
         return new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilites);

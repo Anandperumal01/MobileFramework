@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
+
 import java.net.URL;
 
 public class Driver {
@@ -16,7 +17,11 @@ public class Driver {
     // class should be closed for modification and open for extension
 
     // factory pattern ---> generating child classes  for super class or an interface
-    public static WebDriver driver;
+
+    // private i am using to schield it no one to be used
+  //  private static WebDriver driver;
+
+
 
 
     private Driver(){
@@ -26,7 +31,8 @@ public class Driver {
     public static void initDriver() throws MalformedURLException {
       String modevalue= PropertyUtils.getValue("mode");
 
-       driver=Driverfactory.get(Modes.valueOf(modevalue));
+        WebDriver driver=Driverfactory.get(Modes.valueOf(modevalue.toUpperCase()));
+         DriverManager
 
 
     }
@@ -34,7 +40,7 @@ public class Driver {
     public static void quitDriver(){
 
         // logic to quit
-        driver.quit();
+        DriverManager.getDriver().quit();
 
 
     }
